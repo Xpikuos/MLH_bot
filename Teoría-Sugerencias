@@ -1,0 +1,14 @@
+SUGERENCIAS TÉCNICAS:
+
+SI SE QUIERE HACER EL CHATBOT DESDE CERO:
+
+- sugiero, para empezar, usar una RNN-LST de 3 capas (2 capas para inglés puede ser aceptable, pero para el español, no), y con un número de entradas igual a la mitad de la longitud media típica de una frase (entendida ésta como el número de palabras contenidas en aquella que está encerrada entre signos de interrogación, exclamación, y puntos) ó probar inicialmente con 3 ó 4.
+
+- como el español es un idioma complejo para un sistema realmente no inteligente (porque hay giros en las palabras debido al género, número, tiempo, etc) , aconsejo:
+- convertir primero las palabras a minúsculas sin acentos
+- luego convertirlas a sus formas básicas (es decir, sin género, número, verbos en infinitivo, etc) usando NLTK
+- aconsejo unir los puntos a la última palabra y considerar el conjunto como una única palabra de cara al entrenamiento de la RNN-LSTM.
+- posteriormente con la librería NLTK de Python convertir lo que generase la RNN-LSTM en una frase correcta (al menos desde el punto de vista gramatical), así se podría reducir drásticamente el tiempo de entrenamiento de la  red.
+
+SI NO SE QUIERE "PADECER" TODO EL PROCESO ANTERIOR:
+Se puede usar la librería Chatterbot en Python que debidamente entrenada puede dar mejores resultados...
